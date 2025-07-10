@@ -1,0 +1,247 @@
+.home-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  background-color: #f8fafc;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.left-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.125rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.wave {
+  margin-left: 8px;
+  font-size: 1.25rem;
+  animation: wave 2s infinite;
+}
+
+.title {
+  font-size: clamp(2.625rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.purple-text {
+  color: #8b5cf6;
+  display: inline;
+}
+
+.description {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primary-button, 
+.secondary-button {
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.primary-button {
+  background-color: #8b5cf6;
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.3);
+}
+
+.secondary-button {
+  background-color: white;
+  color: #8b5cf6;
+  border: 1px solid #8b5cf6;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px 0 rgba(139, 92, 246, 0.4);
+}
+
+.primary-button:hover {
+  background-color: #7c3aed;
+}
+
+.secondary-button:hover {
+  background-color: #f5f3ff;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  width: clamp(250px, 30vw, 400px);
+  height: clamp(250px, 30vw, 400px);
+  animation: float 3s ease-in-out infinite;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 12rem;
+}
+
+.outer-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #e879f9;
+  opacity: 0.3;
+}
+
+.inner-circle {
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animations */
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.left-content {
+  animation: slideInLeft 0.8s ease-out;
+ 
+}
+
+.right-content {
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding-top: 100px;
+  }
+
+  .description {
+    max-width: 100%;
+    margin: 0 auto 2.5rem;
+  }
+
+  .greeting {
+    justify-content: center;
+  }
+
+  .button-container {
+    justify-content: center;
+  }
+
+  .image-container{
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section {
+    padding-top: 70px;
+  }
+
+  .home-container {
+    padding: 0 1.5rem;
+    gap: 30px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    width: 100%;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+ 
+}

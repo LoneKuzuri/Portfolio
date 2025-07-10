@@ -1,0 +1,45 @@
+.about-section {
+  padding: 3rem 2rem;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.8;
+  width: 100%;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+
+.purple-text {
+  color: #8000ff; 
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    padding: 2rem 1.2rem;
+  }
+
+  .about-section h1 {
+    font-size: 2rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+}

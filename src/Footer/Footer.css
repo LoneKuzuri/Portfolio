@@ -1,0 +1,81 @@
+.footer {
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.footer-top h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer .purple {
+  color: #8000ff;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #8000ff;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #6600cc;
+}
+
+.btn-outline {
+  border: 2px solid #333;
+  background: transparent;
+  color: #333;
+}
+
+.btn-outline:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  color: #333;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #8000ff;
+}
+
+.footer-bottom p {
+  font-size: 0.95rem;
+  color: #555;
+}
