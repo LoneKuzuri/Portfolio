@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import { FaInstagram, FaLinkedinIn, FaGithub, FaDribbble } from 'react-icons/fa';
 
@@ -10,8 +11,11 @@ const Footer = () => {
           Interested in working together<span className="purple">?</span>
         </h2>
         <div className="footer-buttons">
-          <button className="btn btn-primary">Get In Touch</button>
-          <button className="btn btn-outline">Browse Projects</button>
+          <Link to="/contact" className="primary-button">Get In Touch</Link>
+          
+          <Link to="/projects" className="btn btn-outline"
+          onClick={() => console.log("Browse Projects clicked")}
+          >Browse Projects</Link>
         </div>
       </div>
 

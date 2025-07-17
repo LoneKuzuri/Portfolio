@@ -1,20 +1,43 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = () => {
+    if (!isMenuOpen) {
+      
+      setScrollPosition(window.pageYOffset);
+    }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-  // Close mobile menu on window resize if screen is >= 768px
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    
+    if (isMenuOpen) {
+      document.body.classList.add('mobile-menu-open');
+      document.body.style.top = `-${scrollPosition}px`;
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+      window.scrollTo(0, scrollPosition);
+      document.body.style.top = '';
+    }
+  }, [isMenuOpen, scrollPosition]);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsMenuOpen(false);
       }
     };
+    
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -23,17 +46,25 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-content">
-          <a href="#home" className="logo" onClick={closeMenu}>Suneel</a>
+          <Link to="/" className="logo" onClick={closeMenu}>
+            Suneel
+          </Link>
 
           <div className="nav-menu">
-            <a href="#home" className="nav-link" onClick={closeMenu}>Home</a>
-            <a href="#projects" className="nav-link" onClick={closeMenu}>Projects</a>
-            <a href="#about" className="nav-link" onClick={closeMenu}>About</a>
+            <Link to="/" className="nav-link" onClick={closeMenu}>
+              Home
+            </Link>
+            <Link to="/projects" className="nav-link" onClick={closeMenu}>
+              Projects
+            </Link>
+           <Link to="/about" className="nav-link" onClick={closeMenu}>
+              About
+            </Link>
           </div>
 
-          <a href="#contact" className="contact-button">
+          <Link to="/contact" className="contact-button">
             <MessageCircle size={18} />
-          </a>
+        </Link>
 
           <button
             className="mobile-menu-btn"
@@ -45,10 +76,18 @@ const Navbar = () => {
         </div>
 
         <div className={`mobile-menu ${isMenuOpen ? 'mobile-menu-open' : ''}`}>
-          <a href="#home" className="mobile-nav-link" onClick={closeMenu}>Home</a>
-          <a href="#projects" className="mobile-nav-link" onClick={closeMenu}>Projects</a>
-          <a href="#about" className="mobile-nav-link" onClick={closeMenu}>About</a>
-          <a href="#contact" className="mobile-nav-link" onClick={closeMenu}>Get in Touch</a>
+          <Link to="/" className="mobile-nav-link" onClick={closeMenu}>
+            Home
+          </Link>
+         <Link to="/projects" className="mobile-nav-link" onClick={closeMenu}>
+            Projects
+          </Link>
+          <Link to="/about" className="mobile-nav-link" onClick={closeMenu}>
+            About
+          </Link>
+         <Link to="/contact" className="mobile-nav-link" onClick={closeMenu}>
+            Get in Touch
+          </Link>
         </div>
       </div>
     </nav>

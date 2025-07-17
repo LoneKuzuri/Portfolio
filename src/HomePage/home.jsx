@@ -1,14 +1,20 @@
-import React from 'react'
-import './home.css'
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './home.css';
 
 const Home = () => {
-  return (
-    <section className="home-section">
+  useEffect(() => {
 
+    document.documentElement.style.setProperty('--navbar-height', '60px');
+    return () => {
+      document.documentElement.style.removeProperty('--navbar-height');
+    };
+  }, []);
+
+  return (
+    <section className="home-section" id="home">
       <div className="home-container">
-      
         <div className="left-content">
-      
           <div className="greeting">
             Hey, I'm Sunil
             <span className="wave">👋</span>
@@ -23,8 +29,8 @@ const Home = () => {
           </p>
 
           <div className="button-container">
-            <a href="#contact" className="primary-button">Get In Touch</a>
-            <a href="#projects" className="secondary-button">Browse Projects</a>
+            <Link to="/contact" className="primary-button">Get In Touch</Link>
+            <Link to="/projects" className="secondary-button" onClick={() => console.log("Browse Projects clicked")}>Browse Projects</Link>
           </div>
         </div>
 
@@ -39,7 +45,7 @@ const Home = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Home;

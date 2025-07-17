@@ -47,6 +47,7 @@
   border: 2px solid #333;
   background: transparent;
   color: #333;
+  text-decoration: none;
 }
 
 .btn-outline:hover {
