@@ -24,7 +24,7 @@ const Projects = ({ showLimited = true, scrollAnimation = false }) => {
     },
     {
       id: 4,
-      image: 'images/foodieFinder.avif',
+      image: 'images/FoodBlog.png',
       title: 'FoodieFinder',
       description: 'Restaurant discovery platform with real-time search, reviews, and ratings.',
     }
