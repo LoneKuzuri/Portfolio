@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './projects.css';
+import './Projects.css';
 
 const Projects = ({ showLimited = true, scrollAnimation = false }) => {
   const projects = [
