@@ -6,25 +6,25 @@ const Projects = ({ showLimited = true, scrollAnimation = false }) => {
   const projects = [
     {
       id: 1,
-      image: 'images/taskflow.avif',
+      image: 'Portfolio/images/taskflow.avif',
       title: 'TaskFlow',
       description: 'Task management system with drag-and-drop, real-time collaboration, and responsive layout.',
     },
      {
       id: 2,
-      image: 'images/ecoCart.avif',
+      image: 'Portfolio/images/ecoCart.avif',
       title: 'EcoCart',
       description: 'E-commerce platform promoting eco-friendly products with payment integration.',
     },
     {
       id: 3,
-      image: 'images/eventPlanner.avif',
+      image: 'Portfolio/images/eventPlanner.avif',
       title: 'EventPlanner',
       description: 'Event planning app to organise and manage events effortlessly.',
     },
     {
       id: 4,
-      image: 'images/FoodBlog.png',
+      image: 'Portfolio/images/FoodBlog.png',
       title: 'FoodieFinder',
       description: 'Restaurant discovery platform with real-time search, reviews, and ratings.',
     }
