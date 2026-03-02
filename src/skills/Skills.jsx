@@ -17,17 +17,7 @@ const Skills = () => {
       list: [
         'Javascript',
         'ReactJS',
-        'NextJS',
-        'CSS3',
-      ]
-    },
-    {
-      title: 'Backend',
-      list: [
-        'NodeJS',
-        'MongoDB',
-        'ExpressJS',
-        'Vercel',
+        'CSS',
       ]
     },
     {

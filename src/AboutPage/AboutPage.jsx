@@ -2,46 +2,26 @@ import React, { useState } from 'react';
 import './AboutPage.css';
 
 const experienceData = [
-  {
-    company: 'Apple',
-    role: 'Engineer @ Apple',
-    date: 'May 2018 - Present',
-    points: [
-      'Developed interactive apps using Ember.js for Apple Music.',
-      'Shipped the Apple Music Extension for Facebook Messenger.',
-      'Contributed to MusicKit.js JavaScript framework.',
-    ],
-  },
-  {
-    company: 'Spotify',
-    role: 'UI Engineer @ Spotify',
-    date: 'July - Dec 2017',
-    points: [
-      'Wrote performant code for various projects.',
-      'Worked across multiple platforms and CMS.',
-      'Collaborated with multidisciplinary teams.',
-    ],
-  },
-  {
-    company: 'Microsoft',
-    role: 'Frontend Developer @ Microsoft',
-    date: 'Jan - Apr 2018',
-    points: [
-      'Built a marketing website for a startup.',
-      'Shaped brand direction across packaging and web.',
-      'Communicated directly with clients.',
-    ],
-  },
-  {
-    company: 'Stripe',
-    role: 'Frontend Developer @ Stripe',
-    date: 'Jan - June 2017',
-    points: [
-      'Maintained client websites using HTML, CSS, JS.',
-      'Tested across browsers and devices.',
-      'Worked with clients like JetBlue, U.S. Cellular.',
-    ],
-  },
+ {
+      company: 'FourBit Technologies',
+      role: 'Frontend Developer Intern @ FourBit Technologies',
+      date: 'March - June 2025',
+      points: [
+        'Worked with a team to build a marketing website and e-commerce platform for blistabloc, an ambitious startup.',
+        'Helped solidify a brand direction for blistabloc that spans both packaging and web.',
+        'Interfaced with clients on a weekly basis, providing technological expertise.'
+      ]
+    },
+    {
+      company: 'Corpola Tech',
+      role: 'Frontend Developer Intern @ Corpola Tech',
+      date: 'Dec - Present 2025',
+      points: [
+        'Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and React.js',
+        'Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness.',
+        'Clients included Reliance College'
+      ]
+    },
 ];
 
 const skillsData = [
@@ -51,11 +31,7 @@ const skillsData = [
   },
   {
     title: 'Frontend',
-    list: ['JavaScript', 'ReactJS', 'NextJS', 'CSS3'],
-  },
-  {
-    title: 'Backend',
-    list: ['NodeJS', 'MongoDB', 'ExpressJS', 'Vercel'],
+    list: ['JavaScript', 'ReactJS', 'CSS3'],
   },
   {
     title: 'Soft Skills',

@@ -1,136 +1,244 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ═══════════════════════════════════════════════
+   Experience Section — Enhanced (original theme kept)
+═══════════════════════════════════════════════ */
 
 .experience-section {
-  padding: 4rem 2rem;
-  background-color: #f8fafc;
+  padding: 5rem 2rem;
+  background-color: #f8f9fa;
 }
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
-  color: #1e293b;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
 }
 
-.purple-dot {
-  color: #8b5cf6;
+.purple-dot,
+.purple-text {
+  color: #7c3aed;
 }
 
+/* ── Layout ── */
 .experience-container {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
+/* ── Company List (sidebar) ── */
 .company-list {
   display: flex;
   flex-direction: column;
-  min-width: 150px;
-  border-left: 2px solid #e2e8f0;
-  padding-left: 1rem;
-  
+  gap: 0.25rem;
+  min-width: 180px;
+  border-left: 2px solid #e5e7eb;
+  padding-left: 0;
 }
 
 .company-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   background: none;
   border: none;
- font-size: 1.5rem;
-  font-weight: 500;
-  color: #334155;
-  padding: 0.75rem 0;
-  cursor: pointer;
   border-left: 2px solid transparent;
+  margin-left: -2px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6b7280;
   text-align: left;
-  transition: all 0.3s ease;
-  /* text-decoration: none; */
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  border-radius: 0 6px 6px 0;
 }
 
+.company-button:hover {
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.05);
+}
 
 .company-button.active {
-  color: #8b5cf6;
-  border-color: #8b5cf6;
+  color: #7c3aed;
+  border-left-color: #7c3aed;
+  background: rgba(124, 58, 237, 0.06);
+  font-weight: 600;
 }
 
+.company-button-name {
+  flex: 1;
+}
+
+/* Green dot for current role */
+.company-button-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+  animation: dot-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(34, 197, 94, 0.45); }
+  50%       { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0);    }
+}
+
+/* ── Details Panel ── */
 .details {
   flex: 1;
-  padding-left: 1.2rem;
-  max-width: 800px;
-  margin-top: 1rem;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.details-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Header row: title + badge */
+.details-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
 }
 
 .details h3 {
   font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #1e293b;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .date {
-  font-size: 0.875rem;
-  color: #64748b;
-  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0.25rem 0 1.25rem;
 }
 
+/* Role type badge */
+.experience-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Bullet Points ── */
 .details ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 .details li {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-  color: #334155;
+  gap: 0.75rem;
   font-size: 1rem;
   line-height: 1.6;
+  color: #4a4a4a;
+  opacity: 0;
+  animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
 }
 
 .tick {
-  color: #3b82f6;
-  font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 1;
-  margin-top: 0.2rem;
+  color: #7c3aed;
+  font-size: 0.85rem;
+  margin-top: 3px;
+  flex-shrink: 0;
 }
 
-/* Responsive */
+/* ═══════════════════════════════════════════════
+   Responsive
+═══════════════════════════════════════════════ */
+
 @media (max-width: 768px) {
+  .experience-section {
+    padding: 4rem 1.5rem;
+  }
+
   .experience-container {
     flex-direction: column;
+    gap: 1.5rem;
   }
 
   .company-list {
     flex-direction: row;
-    overflow-x: auto;
+    flex-wrap: wrap;
     border-left: none;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid #e5e7eb;
     padding-left: 0;
-    padding-bottom: 0.5rem;
-    gap: 1.5rem;
+    padding-bottom: 0;
+    gap: 0;
   }
 
   .company-button {
     border-left: none;
     border-bottom: 2px solid transparent;
-    padding: 0.5rem;
+    margin-left: 0;
+    margin-bottom: -2px;
+    border-radius: 6px 6px 0 0;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
 
   .company-button.active {
-    border-left: none;
-    border-bottom: 2px solid #8b5cf6;
+    border-left-color: transparent;
+    border-bottom-color: #7c3aed;
   }
 
   .details {
-    padding-left: 0;
-    padding-top: 1rem;
+    transform: translateY(8px);
+  }
+
+  .details-visible {
+    transform: translateY(0);
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 3rem 1rem;
+  }
+
+  .details h3 {
+    font-size: 1.05rem;
+  }
+
+  .details li {
+    font-size: 0.93rem;
+  }
+
+  .experience-badge {
+    font-size: 0.62rem;
   }
 }

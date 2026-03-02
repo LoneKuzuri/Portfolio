@@ -1,38 +1,74 @@
 .about-section {
-  padding: 3rem 2rem;
-  /* max-width: 800px; */
+  padding: 5rem 2rem;
   margin: 0 auto;
   font-family: 'Poppins', sans-serif;
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.8;
   width: 100%;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: aboutFadeUp 1s ease-out 0.2s forwards;
 }
-
 .about-section h1 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: #8000ff;
 }
 
 .purple-text {
-  color: #8000ff; 
+  color: #8000ff;
 }
-
 .about-section p {
   font-size: 1.05rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
   color: #444;
+  /* max-width: 720px; */
+  opacity: 0;
+  animation: aboutFadeUp 0.7s ease-out forwards;
 }
+
+.about-section p:nth-child(2) { animation-delay: 0.35s; }
+.about-section p:nth-child(3) { animation-delay: 0.45s; }
+.about-section p:nth-child(4) { animation-delay: 0.55s; }
+.about-section p:nth-child(5) { animation-delay: 0.65s; }
+.about-section p:nth-child(6) { animation-delay: 0.75s; }
 
 .about-section p:last-child {
   margin-bottom: 0;
 }
 
+
+.about-section p .purple-text {
+  font-weight: 600;
+  position: relative;
+}
+
+@keyframes aboutFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   .about-section {
-    padding: 2rem 1.2rem;
+    padding: 4rem 1.5rem;
   }
 
   .about-section h1 {
@@ -41,5 +77,21 @@
 
   .about-section p {
     font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-section {
+    padding: 3rem 1rem;
+  }
+
+  .about-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+    line-height: 1.75;
   }
 }
