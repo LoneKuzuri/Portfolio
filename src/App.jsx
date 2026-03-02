@@ -10,16 +10,16 @@ import About from './About/About';
 import Footer from './Footer/Footer';
 import Contact from './Contact/Contact';
 import ProjectsPage from './ProjectsPage/ProjectsPage';
-import AboutPage from './AboutPage/AboutPage'; 
+import AboutPage from './AboutPage/AboutPage';
 import './App.css';
 
 const App = () => {
-
   return (
-    <Router>
+    <Router basename="/Portfolio"> {/* ✅ fixed: matches Vite base path */}
       <div>
         <Navbar />
         <Routes>
+
           {/* Home Page */}
           <Route
             path="/"
@@ -34,14 +34,10 @@ const App = () => {
             }
           />
 
-    
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/contact"  element={<Contact />} />
+          <Route path="/about"    element={<AboutPage />} />
 
-       
-          <Route path="/contact" element={<Contact />} />
-
-          
-          <Route path="/about" element={<AboutPage />} />
         </Routes>
         <Footer />
       </div>

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './home.css';
 
+const base = import.meta.env.BASE_URL;
+
 const Home = () => {
   useEffect(() => {
 

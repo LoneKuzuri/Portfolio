@@ -2,32 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
 
+// ✅ import.meta.env.BASE_URL resolves to '/Portfolio/' in prod, '/' in dev
+const base = import.meta.env.BASE_URL;
+
 const Projects = ({ showLimited = true, scrollAnimation = false }) => {
   const projects = [
     {
       id: 1,
-      image: 'Portfolio/images/taskflow.avif',
+      image: `${base}images/taskflow.avif`,
       title: 'TaskFlow',
       description: 'Task management system with drag-and-drop, real-time collaboration, and responsive layout.',
     },
-     {
+    {
       id: 2,
-      image: 'Portfolio/images/ecoCart.avif',
+      image: `${base}images/ecoCart.avif`,
       title: 'EcoCart',
       description: 'E-commerce platform promoting eco-friendly products with payment integration.',
     },
     {
       id: 3,
-      image: 'Portfolio/images/eventPlanner.avif',
+      image: `${base}images/eventPlanner.avif`,
       title: 'EventPlanner',
       description: 'Event planning app to organise and manage events effortlessly.',
     },
     {
       id: 4,
-      image: 'Portfolio/images/FoodBlog.png',
+      image: `${base}images/FoodBlog.png`,
       title: 'FoodieFinder',
       description: 'Restaurant discovery platform with real-time search, reviews, and ratings.',
-    }
+    },
   ];
 
   const displayedProjects = showLimited ? projects.slice(0, 2) : projects;
@@ -36,7 +39,6 @@ const Projects = ({ showLimited = true, scrollAnimation = false }) => {
     return (
       <section className="projects-scroll-container">
         <div className="projects-scroll-track">
-          {/* For scrolling animation, show all projects doubled */}
           {[...projects, ...projects].map((project, index) => (
             <div key={`${project.id}-${index}`} className="scroll-project-card">
               <img src={project.image} alt={project.title} />
