@@ -15,7 +15,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <Router basename="/SunilPandey"> {/* ✅ use hash routing for GitHub Pages to support refresh on nested routes */}
+    <Router> {/* ✅ use hash routing for GitHub Pages to support refresh on nested routes */}
       <div>
         <Navbar />
         <Routes>
